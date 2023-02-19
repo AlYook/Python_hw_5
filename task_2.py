@@ -17,6 +17,9 @@
 
 
 def count_even_and_odd(num, even_count=0, odd_count=0):
+    if num < 0:
+        print('Введите число больше 0')
+        return 
 
     if num == 0:
         print(f'Количество четных и нечетных чисел равно: ({even_count}, {odd_count})')
@@ -29,7 +32,7 @@ def count_even_and_odd(num, even_count=0, odd_count=0):
     else:
         odd_count += 1
     
-    count_even_and_odd(num // 10, even_count, odd_count)
+    return count_even_and_odd(num // 10, even_count, odd_count)
 
 
 num = int(input('Введите число: '))

@@ -10,7 +10,7 @@
 import random
 
 
-def guess_number(hidden, count=1):
+def guess_number(hidden, count=0):
     num = int(input('Введите число: '))
 
     count += 1

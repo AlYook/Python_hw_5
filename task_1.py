@@ -32,8 +32,8 @@ def calculate():
 
     if operation not in allowed_operations:
         print(f'{operation} - эта операция не поддерживается')
-        calculate()
-    
+        return calculate()
+
     if operation == '0':
         return
 
@@ -41,8 +41,8 @@ def calculate():
         num1 = int(input('Введите первое число:'))
         num2 = int(input('Введите второе число:'))
     except ValueError:
-        print('Вы вместо трехзначного числа ввели строку (((. Исправьтесь')
-        calculate()
+        print('Вы вместо числа ввели строку (((. Исправьтесь')
+        return calculate()
 
     if operation == '+':
         result = num1 + num2
@@ -58,10 +58,10 @@ def calculate():
             result = num1 / num2
         except ZeroDivisionError:
             print('На ноль делить нельзя, введите корректный делитель')
-            calculate()
+            return calculate()
     
     print(f'Ваш результат: {result}')
-    calculate()
+    return calculate()
 
 
 

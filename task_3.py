@@ -16,24 +16,24 @@
 1230 -> 0321
 """
 
-def reverse(num, begin_null, reversed=0):
+def reverse(num, end_null, reversed=0):
 
     if num == 0:
-        if begin_null:
-            reversed = str(reversed) + '0'
+        if end_null:
+            reversed = '0' + str(reversed)
 
         print(f'Перевернутое число: {reversed}')
         return
     
     else:
-        reverse(num // 10, begin_null, reversed * 10 + num % 10)
+        reverse(num // 10, end_null, reversed * 10 + num % 10)
 
 
 num = input('Введите число, которое требуется перевернуть:' )
 
-if num[0] == '0':
-    begin_null = True
+if num[-1] == '0':
+    end_null = True
 else:
-    begin_null = False
+    end_null = False
 
-reverse(int(num), begin_null)
+reverse(int(num), end_null)
