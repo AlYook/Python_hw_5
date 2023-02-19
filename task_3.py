@@ -26,7 +26,7 @@ def reverse(num, end_null, reversed=0):
         return
     
     else:
-        reverse(num // 10, end_null, reversed * 10 + num % 10)
+        return reverse(num // 10, end_null, reversed * 10 + num % 10)
 
 
 num = input('Введите число, которое требуется перевернуть:' )

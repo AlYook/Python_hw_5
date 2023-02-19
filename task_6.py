@@ -21,11 +21,11 @@ def guess_number(hidden, count=0):
 
     if num < hidden:
         print(f'Указанное вами число меньше загаданного. У вас осталось {10 - count} попыток')
-        guess_number(hidden, count)
+        return guess_number(hidden, count)
     
     elif num > hidden:
         print(f'Указанное вами число больше загаданного. У вас осталось {10 - count} попыток')
-        guess_number(hidden, count)
+        return guess_number(hidden, count)
 
     elif num == hidden:
         print(f'Вы угадали !')
